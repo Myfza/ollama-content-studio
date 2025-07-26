@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #121212; /* gray-950 */
+    --color-foreground: #F7F7F7; /* gray-50 */
+    --color-border: rgba(255, 255, 255, 0.1); /* white/10 */
+    --color-input: #1E1E1E; /* gray-900 */
+    --color-ring: #FF5722; /* orange-600 */
+    
+    /* Card & Surface Colors */
+    --color-card: #1E1E1E; /* gray-900 */
+    --color-card-foreground: #F7F7F7; /* gray-50 */
+    --color-popover: #2A2A2A; /* gray-800 */
+    --color-popover-foreground: #F7F7F7; /* gray-50 */
+    
+    /* Muted Colors */
+    --color-muted: #2A2A2A; /* gray-800 */
+    --color-muted-foreground: #B0B0B0; /* gray-400 */
+    
+    /* Primary Colors */
+    --color-primary: #181818; /* gray-900 */
+    --color-primary-foreground: #F7F7F7; /* gray-50 */
+    
+    /* Secondary Colors */
+    --color-secondary: #2A2A2A; /* gray-800 */
+    --color-secondary-foreground: #F7F7F7; /* gray-50 */
+    
+    /* Accent Colors */
+    --color-accent: #FF5722; /* orange-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+    
+    /* Status Colors */
+    --color-success: #4CAF50; /* green-500 */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    --color-warning: #FFEB3B; /* yellow-400 */
+    --color-warning-foreground: #000000; /* black */
+    
+    --color-error: #F44336; /* red-500 */
+    --color-error-foreground: #FFFFFF; /* white */
+    
+    --color-destructive: #F44336; /* red-500 */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Surface Colors */
+    --color-surface: #1E1E1E; /* gray-900 */
+    --color-surface-foreground: #F7F7F7; /* gray-50 */
+    
+    /* Text Colors */
+    --color-text-primary: #F7F7F7; /* gray-50 */
+    --color-text-secondary: #B0B0B0; /* gray-400 */
+    
+    /* Shadow Variables */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Classes */
+  .font-heading {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .font-body {
+    font-family: 'Noto Serif', serif;
+  }
+  
+  .font-caption {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes pulse-subtle {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: calc(200px + 100%) 0;
+    }
+  }
+  
+  @keyframes typing-cursor {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
+  
+  /* Utility Classes */
+  .pulse-subtle {
+    animation: pulse-subtle 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .typing-cursor::after {
+    content: '|';
+    animation: typing-cursor 1s infinite;
+  }
+  
+  /* Ambient Background Pattern */
+  .ambient-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(255, 87, 34, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(76, 175, 80, 0.03) 0%, transparent 50%);
+  }
+}
